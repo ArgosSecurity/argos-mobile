@@ -8,17 +8,21 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Menu Principal"
+        android:text="Lista de Trancas"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTrancas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
     <Button
-        android:id="@+id/btnTrancas"
+        android:id="@+id/btnNovaTranca"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gerenciar Trancas" />
-
-    <!-- Adicione botões para outros formulários aqui -->
+        android:text="Nova Tranca" />
 
 </LinearLayout>
