@@ -8,17 +8,33 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Menu Principal"
+        android:text="Argos"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <Button
+        android:id="@+id/btnResponsaveis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Responsáveis" />
+
+    <Button
+        android:id="@+id/btnDependentes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dependentes" />
+
+    <Button
         android:id="@+id/btnTrancas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gerenciar Trancas" />
+        android:text="Trancas" />
 
-    <!-- Adicione botões para outros formulários aqui -->
+    <Button
+        android:id="@+id/btnChamados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chamados" />
 
 </LinearLayout>

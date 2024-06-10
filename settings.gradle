@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Argos Mobile"
-include(":app")
+rootProject.name = "AgendaContatoRecyclevioewFirebaseBinding"
+include ':app'

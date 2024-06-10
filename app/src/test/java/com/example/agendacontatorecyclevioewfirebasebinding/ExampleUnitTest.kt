@@ -1,4 +1,4 @@
-package com.example.argosmobile
+package com.example.agendacontatorecyclevioewfirebasebinding
 
 import org.junit.Test
 
