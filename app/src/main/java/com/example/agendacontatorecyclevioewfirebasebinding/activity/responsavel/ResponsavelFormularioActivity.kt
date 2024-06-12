@@ -29,29 +29,29 @@ class ResponsavelFormularioActivity : AppCompatActivity() {
         // val btnGravar = findViewById<Button>(R.id.btnGravar)
         // val btnListagem = findViewById<Button>(R.id.btnListagem)
         binding.btnListagem.setOnClickListener {
-            val intent = Intent(this, ChamadoListagemActivity::class.java)
+            val intent = Intent(this, ResponsavelListagemActivity::class.java)
             startActivity(intent)
         }
 
         binding.btnSalvar.setOnClickListener {
-//            val txtNome = findViewById<EditText>(R.id.txtNome)
-            val txtTelefone = findViewById<EditText>(R.id.txtChamadoDependente)
-            val txtEmail = findViewById<EditText>(R.id.txtChamadoRgDependente)
+            val txtNome = findViewById<EditText>(R.id.edtNome)
+            val txtRg = findViewById<EditText>(R.id.edtRg)
+            val txtApto = findViewById<EditText>(R.id.edtResponsavelApto)
 
             val body = RequestBody.create(
                 MediaType.parse("application/json"),
                 """
                     {
-                        "nome": "",
-                        "telefone": "${txtTelefone.text}",
-                        "email": "${txtEmail.text}"
+                        "nome": "${txtNome.text}",
+                        "telefone": "${txtRg.text}",
+                        "email": "${txtApto.text}"
                     }
                 """.trimIndent()
             )
 
             val request = Request.Builder()
                 .post(body)
-                .url("https://fatec-2024-1s-pdmi-default-rtdb.firebaseio.com/agenda.json")
+                .url("https://fatec-mobile-default-rtdb.firebaseio.com/responsavel.json")
                 .build()
             val response = object : Callback {
                 override fun onFailure(call: Call?, e: IOException?) {

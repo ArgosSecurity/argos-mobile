@@ -51,7 +51,7 @@ class DependenteFormularioActivity : AppCompatActivity() {
 
             val request = Request.Builder()
                 .post(body)
-                .url("https://fatec-2024-1s-pdmi-default-rtdb.firebaseio.com/agenda.json")
+                .url("https://fatec-mobile-default-rtdb.firebaseio.com/dependente.json")
                 .build()
             val response = object : Callback {
                 override fun onFailure(call: Call?, e: IOException?) {

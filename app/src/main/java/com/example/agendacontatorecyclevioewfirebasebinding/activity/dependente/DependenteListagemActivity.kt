@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.agendacontatorecyclevioewfirebasebinding.databinding.ListagemDependenteLayoutBinding
 import com.example.agendacontatorecyclevioewfirebasebinding.model.Contato
-import com.example.agendacontatorecyclevioewfirebasebinding.recycle.ContatoAdapter
+import com.example.agendacontatorecyclevioewfirebasebinding.model.Dependente
+import com.example.agendacontatorecyclevioewfirebasebinding.recycle.chamado.DependenteAdapter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.Call
@@ -21,7 +22,7 @@ import java.io.IOException
 
 class DependenteListagemActivity: AppCompatActivity() {
     val gson = Gson()
-    val lista = ArrayList<Contato>()
+    val lista = ArrayList<Dependente>()
     private var clientHttp = OkHttpClient()
     lateinit var rcvContatos : RecyclerView
     lateinit var binding : ListagemDependenteLayoutBinding
@@ -31,7 +32,7 @@ class DependenteListagemActivity: AppCompatActivity() {
         setContentView(binding.root)
         //setContentView(R.layout.listagem_layout)
         // rcvContatos = findViewById(R.id.rcvContatos)
-        val adapter = ContatoAdapter(this, lista)
+        val adapter = DependenteAdapter(this, lista)
         binding.apply {
             rcvContatos.adapter = adapter
             rcvContatos.layoutManager = LinearLayoutManager(
@@ -49,7 +50,7 @@ class DependenteListagemActivity: AppCompatActivity() {
         super.onStart()
         val request = Request.Builder()
             .get()
-            .url("https://fatec-2024-1s-pdmi-default-rtdb.firebaseio.com/agenda.json")
+            .url("https://fatec-mobile-default-rtdb.firebaseio.com/dependente.json")
             .build()
         val response = object : Callback {
             override fun onFailure(call: Call?, e: IOException?) {
@@ -58,9 +59,9 @@ class DependenteListagemActivity: AppCompatActivity() {
             override fun onResponse(call: Call?, response: Response?) {
                 Log.i("AGENDA-CONTATO", "Dados recebidos convertendo")
                 val body = response?.body()
-                val type = object : TypeToken<HashMap<String?, Contato?>?>() {}.type
-                val myMap: HashMap<String, Contato> = gson.fromJson(body?.string(), type)
-                val listaTemp = ArrayList<Contato>()
+                val type = object : TypeToken<HashMap<String?, Dependente?>?>() {}.type
+                val myMap: HashMap<String, Dependente> = gson.fromJson(body?.string(), type)
+                val listaTemp = ArrayList<Dependente>()
                 myMap.keys.forEach {
                     val contato = myMap[it]
                     if (contato != null) {

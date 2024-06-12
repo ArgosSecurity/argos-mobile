@@ -14,13 +14,6 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtRg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="RG"
-        android:inputType="text" />
-
-    <EditText
         android:id="@+id/edtNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +21,14 @@
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/edtDependenteApto"
+        android:id="@+id/edtRg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="RG"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtResponsavelApto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Apartamento"

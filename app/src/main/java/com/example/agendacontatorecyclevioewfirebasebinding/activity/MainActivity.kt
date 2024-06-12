@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.R
 import com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel.ChamadoFormularioActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel.DependenteFormularioActivity
+import com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel.ResponsavelFormularioActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel.TrancaFormularioActivity
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val btnChamados = findViewById<Button>(R.id.btnChamados)
 
         btnResponsaveis.setOnClickListener {
-            startActivity(Intent(this, ChamadoFormularioActivity::class.java))
+            startActivity(Intent(this, ResponsavelFormularioActivity::class.java))
         }
 
         btnDependentes.setOnClickListener {

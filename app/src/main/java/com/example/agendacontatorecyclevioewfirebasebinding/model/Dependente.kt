@@ -1,7 +1,7 @@
 package com.example.agendacontatorecyclevioewfirebasebinding.model
 
 data class Dependente(
-    val id: Int? = null,
+    var id: String? = null,
     val rg: String = "",
     val nome: String = "",
     val apto: String = ""

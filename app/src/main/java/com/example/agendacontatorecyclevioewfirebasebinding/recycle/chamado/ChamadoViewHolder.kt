@@ -1,4 +1,4 @@
-package com.example.agendacontatorecyclevioewfirebasebinding.recycle
+package com.example.agendacontatorecyclevioewfirebasebinding.recycle.chamado
 
 import android.view.View
 import android.widget.Button
@@ -7,15 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.agendacontatorecyclevioewfirebasebinding.R
 
 
-class ContatoViewHolder(view : View) : RecyclerView.ViewHolder(view) {
+class ChamadoViewHolder(view : View) : RecyclerView.ViewHolder(view) {
     var txtNome : TextView
-    var txtTelefone : TextView
-    var txtEmail : TextView
+    var txtRg : TextView
     var btnRowApagar : Button
     init {
         txtNome = view.findViewById(R.id.txtRowNome)
-        txtTelefone = view.findViewById(R.id.txtRowTelefone)
-        txtEmail = view.findViewById(R.id.txtRowEmail)
+        txtRg = view.findViewById(R.id.txtRowRg)
         btnRowApagar = view.findViewById(R.id.btnRowApagar)
     }
 }

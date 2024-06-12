@@ -1,7 +1,8 @@
 package com.example.agendacontatorecyclevioewfirebasebinding.model
 
 data class Responsavel (
-    var nome : String = "",
-    var rg : String = "",
-    var apto : String = ""
+    var id: String? = null,
+    val rg: String = "",
+    val nome: String = "",
+    val apto: String = ""
 )

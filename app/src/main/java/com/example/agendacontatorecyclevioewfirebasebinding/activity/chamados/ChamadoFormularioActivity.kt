@@ -50,7 +50,7 @@ class ChamadoFormularioActivity : AppCompatActivity() {
 
             val request = Request.Builder()
                 .post(body)
-                .url("http://localhost:8080/api/v1/responsavel")
+                .url("https://fatec-mobile-default-rtdb.firebaseio.com/chamado.json")
                 .build()
             val response = object : Callback {
                 override fun onFailure(call: Call?, e: IOException?) {

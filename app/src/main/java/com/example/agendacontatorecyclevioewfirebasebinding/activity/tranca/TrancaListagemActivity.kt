@@ -1,4 +1,4 @@
-package com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel
+package com.example.agendacontatorecyclevioewfirebasebinding.activity.tranca
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,40 +6,37 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel.TrancaFormularioActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.databinding.ListagemTrancaLayoutBinding
-import com.example.agendacontatorecyclevioewfirebasebinding.model.Contato
-import com.example.agendacontatorecyclevioewfirebasebinding.recycle.ContatoAdapter
+import com.example.agendacontatorecyclevioewfirebasebinding.model.Tranca
+import com.example.agendacontatorecyclevioewfirebasebinding.recycle.tranca.TrancaAdapter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
+import okhttp3.*
 import java.io.IOException
 
-
-class TrancaListagemActivity: AppCompatActivity() {
+class TrancaListagemActivity : AppCompatActivity() {
     val gson = Gson()
-    val lista = ArrayList<Contato>()
+    val lista = ArrayList<Tranca>()
     private var clientHttp = OkHttpClient()
-    lateinit var rcvContatos : RecyclerView
-    lateinit var binding : ListagemTrancaLayoutBinding
+    lateinit var rcvContatos: RecyclerView
+    lateinit var binding: ListagemTrancaLayoutBinding
+
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
         binding = ListagemTrancaLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //setContentView(R.layout.listagem_layout)
-        // rcvContatos = findViewById(R.id.rcvContatos)
-        val adapter = ContatoAdapter(this, lista)
+
+        val adapter = TrancaAdapter(this, lista)
         binding.apply {
             rcvContatos.adapter = adapter
             rcvContatos.layoutManager = LinearLayoutManager(
-                    this@TrancaListagemActivity)
-            // val btnFormulario = findViewById<Button>(R.id.btnFormulario)
+                this@TrancaListagemActivity
+            )
+
             btnFormulario.setOnClickListener {
                 val intent = Intent(this@TrancaListagemActivity,
-                    ChamadoFormularioActivity::class.java)
+                    TrancaFormularioActivity::class.java)
                 startActivity(intent)
             }
         }
@@ -49,26 +46,30 @@ class TrancaListagemActivity: AppCompatActivity() {
         super.onStart()
         val request = Request.Builder()
             .get()
-            .url("https://fatec-2024-1s-pdmi-default-rtdb.firebaseio.com/agenda.json")
+            .url("https://fatec-mobile-default-rtdb.firebaseio.com/tranca.json")
             .build()
+
         val response = object : Callback {
             override fun onFailure(call: Call?, e: IOException?) {
-                Log.e("AGENDA-CONTATO", e?.message.toString())
+                Log.e("AGENDA-TRANCA", e?.message.toString())
             }
+
             override fun onResponse(call: Call?, response: Response?) {
-                Log.i("AGENDA-CONTATO", "Dados recebidos convertendo")
+                Log.i("AGENDA-TRANCA", "Dados recebidos convertendo")
                 val body = response?.body()
-                val type = object : TypeToken<HashMap<String?, Contato?>?>() {}.type
-                val myMap: HashMap<String, Contato> = gson.fromJson(body?.string(), type)
-                val listaTemp = ArrayList<Contato>()
+                val type = object : TypeToken<HashMap<String?, Tranca?>?>() {}.type
+                val myMap: HashMap<String, Tranca> = gson.fromJson(body?.string(), type)
+                val listaTemp = ArrayList<Tranca>()
+
                 myMap.keys.forEach {
-                    val contato = myMap[it]
-                    if (contato != null) {
-                        contato.id = it
-                        Log.i("AGENDA-CONTATO", "Contato: $contato")
-                        listaTemp.add(contato)
+                    val tranca = myMap[it]
+                    if (tranca != null) {
+                        tranca.id = it
+                        Log.i("AGENDA-TRANCA", "Tranca: $tranca")
+                        listaTemp.add(tranca)
                     }
                 }
+
                 this@TrancaListagemActivity.runOnUiThread {
                     lista.clear()
                     lista.addAll(listaTemp)

@@ -1,7 +1,7 @@
 package com.example.agendacontatorecyclevioewfirebasebinding.model
 
-data class Chamado (
+data class Tranca (
     var id : String? = null,
-    var nome : String = "",
-    var rg : String = "",
+    var localidade : String = "",
+    var idRegistro : String = ""
 )

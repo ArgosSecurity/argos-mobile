@@ -5,12 +5,12 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastro do Chamado"
+        android:text="Cadastro Chamado"
         android:textAlignment="center"
-        android:textSize="32sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/txtChamadoDependente"
