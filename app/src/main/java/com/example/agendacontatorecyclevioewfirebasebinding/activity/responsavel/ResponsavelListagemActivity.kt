@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.agendacontatorecyclevioewfirebasebinding.databinding.ListagemLayoutBinding
+import com.example.agendacontatorecyclevioewfirebasebinding.databinding.ListagemResponsavelLayoutBinding
 import com.example.agendacontatorecyclevioewfirebasebinding.model.Contato
 import com.example.agendacontatorecyclevioewfirebasebinding.recycle.ContatoAdapter
 import com.google.gson.Gson
@@ -24,10 +24,10 @@ class ResponsavelListagemActivity: AppCompatActivity() {
     val lista = ArrayList<Contato>()
     private var clientHttp = OkHttpClient()
     lateinit var rcvContatos : RecyclerView
-    lateinit var binding : ListagemLayoutBinding
+    lateinit var binding : ListagemResponsavelLayoutBinding
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        binding = ListagemLayoutBinding.inflate(layoutInflater)
+        binding = ListagemResponsavelLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //setContentView(R.layout.listagem_layout)
         // rcvContatos = findViewById(R.id.rcvContatos)
@@ -35,10 +35,10 @@ class ResponsavelListagemActivity: AppCompatActivity() {
         binding.apply {
             rcvContatos.adapter = adapter
             rcvContatos.layoutManager = LinearLayoutManager(
-                    this@ChamadoListagemActivity)
+                    this@ResponsavelListagemActivity)
             // val btnFormulario = findViewById<Button>(R.id.btnFormulario)
             btnFormulario.setOnClickListener {
-                val intent = Intent(this@ChamadoListagemActivity,
+                val intent = Intent(this@ResponsavelListagemActivity,
                     ChamadoFormularioActivity::class.java)
                 startActivity(intent)
             }
@@ -49,7 +49,7 @@ class ResponsavelListagemActivity: AppCompatActivity() {
         super.onStart()
         val request = Request.Builder()
             .get()
-            .url("https://fatec-2024-1s-pdmi-default-rtdb.firebaseio.com/agenda.json")
+            .url("http://localhost:8080/api/v1/responsavel")
             .build()
         val response = object : Callback {
             override fun onFailure(call: Call?, e: IOException?) {
@@ -69,7 +69,7 @@ class ResponsavelListagemActivity: AppCompatActivity() {
                         listaTemp.add(contato)
                     }
                 }
-                this@ChamadoListagemActivity.runOnUiThread {
+                this@ResponsavelListagemActivity.runOnUiThread {
                     lista.clear()
                     lista.addAll(listaTemp)
                     binding.rcvContatos.adapter?.notifyDataSetChanged()

@@ -6,7 +6,7 @@ import android.util.Log
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.R
-import com.example.agendacontatorecyclevioewfirebasebinding.databinding.FormularioLayoutBinding
+import com.example.agendacontatorecyclevioewfirebasebinding.databinding.FormularioTrancaLayoutBinding
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType
@@ -19,11 +19,11 @@ import java.io.IOException
 class TrancaFormularioActivity : AppCompatActivity() {
 
     private var clientHttp = OkHttpClient()
-    private lateinit var binding : FormularioLayoutBinding
+    private lateinit var binding : FormularioTrancaLayoutBinding
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        binding = FormularioLayoutBinding.inflate(layoutInflater)
+        binding = FormularioTrancaLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // setContentView(R.layout.formulario_layout)
         // val btnGravar = findViewById<Button>(R.id.btnGravar)
@@ -33,18 +33,16 @@ class TrancaFormularioActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnGravar.setOnClickListener {
-            val txtNome = findViewById<EditText>(R.id.txtNome)
-            val txtTelefone = findViewById<EditText>(R.id.txtTelefone)
-            val txtEmail = findViewById<EditText>(R.id.txtEmail)
+        binding.btnSalvar.setOnClickListener {
+            val txtLocalidade = findViewById<EditText>(R.id.edtLocalidade)
+            val txtIdRegistro = findViewById<EditText>(R.id.edtIdRegistroFisico)
 
             val body = RequestBody.create(
                 MediaType.parse("application/json"),
                 """
                     {
-                        "nome": "${txtNome.text}",
-                        "telefone": "${txtTelefone.text}",
-                        "email": "${txtEmail.text}"
+                        "localidade": "${txtLocalidade.text}",
+                        "idRegistroTranca": "${txtIdRegistro.text}"
                     }
                 """.trimIndent()
             )

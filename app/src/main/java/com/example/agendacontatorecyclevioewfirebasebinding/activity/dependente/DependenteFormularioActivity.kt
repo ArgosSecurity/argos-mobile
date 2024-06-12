@@ -6,7 +6,7 @@ import android.util.Log
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.R
-import com.example.agendacontatorecyclevioewfirebasebinding.databinding.FormularioLayoutBinding
+import com.example.agendacontatorecyclevioewfirebasebinding.databinding.FormularioDependenteLayoutBinding
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType
@@ -19,11 +19,11 @@ import java.io.IOException
 class DependenteFormularioActivity : AppCompatActivity() {
 
     private var clientHttp = OkHttpClient()
-    private lateinit var binding : FormularioLayoutBinding
+    private lateinit var binding : FormularioDependenteLayoutBinding
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        binding = FormularioLayoutBinding.inflate(layoutInflater)
+        binding = FormularioDependenteLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // setContentView(R.layout.formulario_layout)
         // val btnGravar = findViewById<Button>(R.id.btnGravar)
@@ -34,15 +34,15 @@ class DependenteFormularioActivity : AppCompatActivity() {
         }
 
         binding.btnGravar.setOnClickListener {
-            val txtNome = findViewById<EditText>(R.id.txtNome)
-            val txtTelefone = findViewById<EditText>(R.id.txtTelefone)
-            val txtEmail = findViewById<EditText>(R.id.txtEmail)
+//            val txtNome = findViewById<EditText>(R.id.txtNome)
+            val txtTelefone = findViewById<EditText>(R.id.txtChamadoDependente)
+            val txtEmail = findViewById<EditText>(R.id.txtChamadoRgDependente)
 
             val body = RequestBody.create(
                 MediaType.parse("application/json"),
                 """
                     {
-                        "nome": "${txtNome.text}",
+                        "nome": "",
                         "telefone": "${txtTelefone.text}",
                         "email": "${txtEmail.text}"
                     }

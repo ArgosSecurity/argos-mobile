@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.agendacontatorecyclevioewfirebasebinding.databinding.ListagemLayoutBinding
+import com.example.agendacontatorecyclevioewfirebasebinding.databinding.ListagemDependenteLayoutBinding
 import com.example.agendacontatorecyclevioewfirebasebinding.model.Contato
 import com.example.agendacontatorecyclevioewfirebasebinding.recycle.ContatoAdapter
 import com.google.gson.Gson
@@ -24,10 +24,10 @@ class DependenteListagemActivity: AppCompatActivity() {
     val lista = ArrayList<Contato>()
     private var clientHttp = OkHttpClient()
     lateinit var rcvContatos : RecyclerView
-    lateinit var binding : ListagemLayoutBinding
+    lateinit var binding : ListagemDependenteLayoutBinding
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        binding = ListagemLayoutBinding.inflate(layoutInflater)
+        binding = ListagemDependenteLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //setContentView(R.layout.listagem_layout)
         // rcvContatos = findViewById(R.id.rcvContatos)
@@ -35,10 +35,10 @@ class DependenteListagemActivity: AppCompatActivity() {
         binding.apply {
             rcvContatos.adapter = adapter
             rcvContatos.layoutManager = LinearLayoutManager(
-                    this@ChamadoListagemActivity)
+                    this@DependenteListagemActivity)
             // val btnFormulario = findViewById<Button>(R.id.btnFormulario)
             btnFormulario.setOnClickListener {
-                val intent = Intent(this@ChamadoListagemActivity,
+                val intent = Intent(this@DependenteListagemActivity,
                     ChamadoFormularioActivity::class.java)
                 startActivity(intent)
             }
@@ -69,7 +69,7 @@ class DependenteListagemActivity: AppCompatActivity() {
                         listaTemp.add(contato)
                     }
                 }
-                this@ChamadoListagemActivity.runOnUiThread {
+                this@DependenteListagemActivity.runOnUiThread {
                     lista.clear()
                     lista.addAll(listaTemp)
                     binding.rcvContatos.adapter?.notifyDataSetChanged()

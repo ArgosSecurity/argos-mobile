@@ -2,45 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Agenda de Contato"
+        android:text="Cadastro de Dependente"
         android:textAlignment="center"
-        android:textSize="32sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/txtNome"
+        android:id="@+id/edtRg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Nome completo"
+        android:hint="RG"
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/txtTelefone"
+        android:id="@+id/edtNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Telefone:"
+        android:hint="Nome"
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/txtEmail"
+        android:id="@+id/edtDependenteApto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Email:"
+        android:hint="Apartamento"
         android:inputType="text" />
 
     <Button
         android:id="@+id/btnGravar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gravar" />
+        android:text="Salvar" />
 
     <TextView
         android:id="@+id/textView2"
@@ -53,4 +51,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ir para Listagem" />
+
 </LinearLayout>

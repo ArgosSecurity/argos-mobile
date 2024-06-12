@@ -6,7 +6,7 @@ import android.util.Log
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.R
-import com.example.agendacontatorecyclevioewfirebasebinding.databinding.FormularioLayoutBinding
+import com.example.agendacontatorecyclevioewfirebasebinding.databinding.FormularioChamadoLayoutBinding
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType
@@ -19,11 +19,11 @@ import java.io.IOException
 class ChamadoFormularioActivity : AppCompatActivity() {
 
     private var clientHttp = OkHttpClient()
-    private lateinit var binding : FormularioLayoutBinding
+    private lateinit var binding : FormularioChamadoLayoutBinding
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        binding = FormularioLayoutBinding.inflate(layoutInflater)
+        binding = FormularioChamadoLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // setContentView(R.layout.formulario_layout)
         // val btnGravar = findViewById<Button>(R.id.btnGravar)
@@ -34,24 +34,23 @@ class ChamadoFormularioActivity : AppCompatActivity() {
         }
 
         binding.btnGravar.setOnClickListener {
-            val txtNome = findViewById<EditText>(R.id.txtNome)
-            val txtTelefone = findViewById<EditText>(R.id.txtTelefone)
-            val txtEmail = findViewById<EditText>(R.id.txtEmail)
+            val txtDependente = findViewById<EditText>(R.id.txtChamadoDependente)
+            val txtRgDependente = findViewById<EditText>(R.id.txtChamadoRgDependente)
 
             val body = RequestBody.create(
                 MediaType.parse("application/json"),
                 """
                     {
-                        "nome": "${txtNome.text}",
-                        "telefone": "${txtTelefone.text}",
-                        "email": "${txtEmail.text}"
+                        "tipoChamado": "DEPENDENTE",
+                        "dependenteNome": "${txtDependente.text}",
+                        "dependenteRg: "${txtRgDependente.text}"
                     }
                 """.trimIndent()
             )
 
             val request = Request.Builder()
                 .post(body)
-                .url("https://fatec-2024-1s-pdmi-default-rtdb.firebaseio.com/agenda.json")
+                .url("http://localhost:8080/api/v1/responsavel")
                 .build()
             val response = object : Callback {
                 override fun onFailure(call: Call?, e: IOException?) {

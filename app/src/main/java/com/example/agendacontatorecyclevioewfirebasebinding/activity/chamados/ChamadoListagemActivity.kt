@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.agendacontatorecyclevioewfirebasebinding.databinding.ListagemLayoutBinding
+import com.example.agendacontatorecyclevioewfirebasebinding.databinding.ListagemChamadoLayoutBinding
 import com.example.agendacontatorecyclevioewfirebasebinding.model.Contato
 import com.example.agendacontatorecyclevioewfirebasebinding.recycle.ContatoAdapter
 import com.google.gson.Gson
@@ -24,10 +24,10 @@ class ChamadoListagemActivity: AppCompatActivity() {
     val lista = ArrayList<Contato>()
     private var clientHttp = OkHttpClient()
     lateinit var rcvContatos : RecyclerView
-    lateinit var binding : ListagemLayoutBinding
+    lateinit var binding : ListagemChamadoLayoutBinding
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        binding = ListagemLayoutBinding.inflate(layoutInflater)
+        binding = ListagemChamadoLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //setContentView(R.layout.listagem_layout)
         // rcvContatos = findViewById(R.id.rcvContatos)
