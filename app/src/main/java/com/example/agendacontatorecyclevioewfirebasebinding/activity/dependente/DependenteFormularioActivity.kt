@@ -34,17 +34,23 @@ class DependenteFormularioActivity : AppCompatActivity() {
         }
 
         binding.btnGravar.setOnClickListener {
-            val txtRg = findViewById<EditText>(R.id.edtRg)
-            val txtNome = findViewById<EditText>(R.id.edtNome)
-            val txtDependenteApartamento = findViewById<EditText>(R.id.edtDependenteApto)
+            val txtRg = findViewById<EditText>(R.id.txtDependenteRg)
+            val txtCnh = findViewById<EditText>(R.id.txtDependenteCnh)
+            val txtCpf = findViewById<EditText>(R.id.txtDependenteCpf)
+            val txtNome = findViewById<EditText>(R.id.txtDependenteNome)
+            val txtApto = findViewById<EditText>(R.id.txtDependenteApto)
+            val txtResponsavel = findViewById<EditText>(R.id.txtDependenteResponsavel)
 
             val body = RequestBody.create(
                 MediaType.parse("application/json"),
                 """
                     {
-                        "nome": "${txtNome.text}",
                         "rg": "${txtRg.text}",
-                        "apto": "${txtDependenteApartamento.text}"
+                        "cnh": "${txtCnh.text}",
+                        "cpf": "${txtCpf.text}",
+                        "nome": "${txtNome.text}",
+                        "apto": "${txtApto.text}",
+                        "responsavel": "${txtResponsavel.text}"
                     }
                 """.trimIndent()
             )
@@ -55,13 +61,13 @@ class DependenteFormularioActivity : AppCompatActivity() {
                 .build()
             val response = object : Callback {
                 override fun onFailure(call: Call?, e: IOException?) {
-                    Log.e("AGENDA-CONTATO", e?.message.toString())
+                    Log.e("AGENDA-DEPENDENTE", e?.message.toString())
                 }
 
                 override fun onResponse(call: Call?, response: Response?) {
                     val localBody = response?.body()
                     localBody?.charStream()?.buffered()?.lines()?.forEach {
-                        Log.i("AGENDA-CONTATO", it.toString())
+                        Log.i("AGENDA-DEPENDENTE", it.toString())
                     }
 
                 }

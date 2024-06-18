@@ -8,14 +8,18 @@ import com.example.agendacontatorecyclevioewfirebasebinding.R
 
 
 class ChamadoViewHolder(view : View) : RecyclerView.ViewHolder(view) {
-    var txtNome : TextView
-    var txtRg : TextView
-    var txtTipoChamado : TextView
+    var txtNumeroRegistroTag : TextView
+    var txtTipoTag : TextView
+    var txtHorarioEntrada : TextView
+    var txtHorarioSaida : TextView
     var btnRowApagar : Button
+    var txtTipoChamado : TextView
     init {
-        txtNome = view.findViewById(R.id.txtRowNome)
-        txtRg = view.findViewById(R.id.txtRowRg)
-        txtTipoChamado = view.findViewById(R.id.txtRowTipoChamado)
+        txtNumeroRegistroTag = view.findViewById(R.id.txtRowNumeroRegistroTag)
+        txtTipoTag = view.findViewById(R.id.txtRowTipoTag)
+        txtHorarioEntrada = view.findViewById(R.id.txtRowHorarioEntrada)
+        txtHorarioSaida = view.findViewById(R.id.txtRowHorarioSaida)
         btnRowApagar = view.findViewById(R.id.btnRowApagar)
+        txtTipoChamado = view.findViewById(R.id.txtRowTipoChamado)
     }
 }

@@ -2,37 +2,61 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastro de Tranca"
+        android:text="Cadastro Tranca"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtLocalidade"
+        android:id="@+id/txtTrancaLocalidade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:ems="10"
         android:hint="Localidade"
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/edtIdRegistroFisico"
+        android:id="@+id/txtTrancaIdRegistro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="ID Registro Físico"
-        android:inputType="number" />
+        android:ems="10"
+        android:hint="ID do Registro"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txtTrancaFabricante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Fabricante"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txtTrancaModelo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Modelo"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txtTrancaTipoTranca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Tipo da Tranca"
+        android:inputType="text" />
 
     <Button
-        android:id="@+id/btnSalvar"
+        android:id="@+id/btnGravar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Salvar" />
-
+        android:text="Gravar" />
 
     <TextView
         android:id="@+id/textView2"
@@ -45,5 +69,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ir para Listagem" />
-
 </LinearLayout>

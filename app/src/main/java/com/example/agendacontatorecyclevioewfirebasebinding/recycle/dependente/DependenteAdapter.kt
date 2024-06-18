@@ -1,3 +1,4 @@
+package com.example.agendacontatorecyclevioewfirebasebinding.recycle.dependente
 
 import android.content.Context
 import android.util.Log
@@ -5,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.agendacontatorecyclevioewfirebasebinding.R
-import com.example.agendacontatorecyclevioewfirebasebinding.model.Contato
 import com.example.agendacontatorecyclevioewfirebasebinding.model.Dependente
-import com.example.agendacontatorecyclevioewfirebasebinding.recycle.chamado.DependenteViewHolder
 import com.example.agendacontatorecyclevioewfirebasebinding.repository.DependenteRepository
 
 class DependenteAdapter(private val contexto: Context, private val lista: ArrayList<Dependente>) :
@@ -25,12 +24,16 @@ class DependenteAdapter(private val contexto: Context, private val lista: ArrayL
     }
     override fun onBindViewHolder(holder: DependenteViewHolder, position: Int) {
         val dependente = lista[position]
-        holder.txtNome.text = "Nome do dependente: " + dependente.nome
-        holder.txtRg.text = "RG do dependente: " + dependente.rg
-        holder.txtApto.text = "Apto do dependente: " + dependente.apto
+        holder.txtNome.text = "Nome: " + dependente.nome
+        holder.txtRg.text = "RG: " + dependente.rg
+        holder.txtCnh.text = "CNH: " + dependente.cnh
+        holder.txtCpf.text = "CPF: " + dependente.cpf
+        holder.txtApto.text = "Apto: " + dependente.apto
+        holder.txtResponsavel.text = "Responsável: " + dependente.responsavel
+
         holder.btnRowApagar.setOnClickListener {
-            Log.i("AGENDA-DEPENDENTE",
-                "Contato selecionado para apagar: $dependente")
+            Log.i("AGENDA-CONTATO",
+                "Dependente selecionado para apagar: $dependente")
             repositorio.apagarDependente(dependente)
         }
     }

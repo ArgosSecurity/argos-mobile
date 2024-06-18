@@ -33,18 +33,24 @@ class ResponsavelFormularioActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnSalvar.setOnClickListener {
-            val txtNome = findViewById<EditText>(R.id.edtNome)
-            val txtRg = findViewById<EditText>(R.id.edtRg)
-            val txtApto = findViewById<EditText>(R.id.edtResponsavelApto)
+        binding.btnGravar.setOnClickListener {
+            val txtRg = findViewById<EditText>(R.id.txtResponsavelRg)
+            val txtNome = findViewById<EditText>(R.id.txtResponsavelNome)
+            val txtDataNascimento = findViewById<EditText>(R.id.txtResponsavelDataNascimento)
+            val txtCpf = findViewById<EditText>(R.id.txtResponsavelCpf)
+            val txtApto = findViewById<EditText>(R.id.txtResponsavelApto)
+            val txtQuantidadeDependentes = findViewById<EditText>(R.id.txtResponsavelQuantidadeDependentes)
 
             val body = RequestBody.create(
                 MediaType.parse("application/json"),
                 """
                     {
-                        "nome": "${txtNome.text}",
                         "rg": "${txtRg.text}",
-                        "apto": "${txtApto.text}"
+                        "nome": "${txtNome.text}",
+                        "dataNascimento": "${txtDataNascimento.text}",
+                        "cpf": "${txtCpf.text}",
+                        "apto": "${txtApto.text}",
+                        "quantidadeDependentes": ${txtQuantidadeDependentes.text}
                     }
                 """.trimIndent()
             )
@@ -55,13 +61,13 @@ class ResponsavelFormularioActivity : AppCompatActivity() {
                 .build()
             val response = object : Callback {
                 override fun onFailure(call: Call?, e: IOException?) {
-                    Log.e("AGENDA-CONTATO", e?.message.toString())
+                    Log.e("AGENDA-RESPONSAVEL", e?.message.toString())
                 }
 
                 override fun onResponse(call: Call?, response: Response?) {
                     val localBody = response?.body()
                     localBody?.charStream()?.buffered()?.lines()?.forEach {
-                        Log.i("AGENDA-CONTATO", it.toString())
+                        Log.i("AGENDA-RESPONSAVEL", it.toString())
                     }
 
                 }

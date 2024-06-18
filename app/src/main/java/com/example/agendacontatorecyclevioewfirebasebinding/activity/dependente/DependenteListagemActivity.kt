@@ -1,14 +1,15 @@
 package com.example.agendacontatorecyclevioewfirebasebinding.activity.dependente
 
-import DependenteAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.agendacontatorecyclevioewfirebasebinding.activity.dependente.DependenteFormularioActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.databinding.ListagemDependenteLayoutBinding
 import com.example.agendacontatorecyclevioewfirebasebinding.model.Dependente
+import com.example.agendacontatorecyclevioewfirebasebinding.recycle.dependente.DependenteAdapter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.Call

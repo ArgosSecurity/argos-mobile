@@ -3,6 +3,8 @@ package com.example.agendacontatorecyclevioewfirebasebinding.model
 data class Chamado (
     var id : String? = null,
     var tipoChamado : String = "",
-    var nome : String = "",
-    var rg : String = "",
+    var numeroRegistroTag : String = "",
+    var tipoTag: String = "",
+    var horarioEntrada: String = "",
+    var horarioSaida: String = "",
 )

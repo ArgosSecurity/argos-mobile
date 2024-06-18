@@ -14,7 +14,7 @@ class ChamadoRepository {
     fun apagarChamado(chamado : Chamado) {
         val request = Request.Builder()
             .delete()
-            .url("https://fatec-mobile-default-rtdb.firebaseio.com/responsavel/${chamado.id}.json")
+            .url("https://fatec-mobile-default-rtdb.firebaseio.com/chamado/${chamado.id}.json")
             .build()
         val response = object : Callback {
             override fun onFailure(call: Call?, e: IOException?) {

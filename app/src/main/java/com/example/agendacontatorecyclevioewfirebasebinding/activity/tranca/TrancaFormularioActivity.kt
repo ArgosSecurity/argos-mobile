@@ -6,7 +6,6 @@ import android.util.Log
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.R
-import com.example.agendacontatorecyclevioewfirebasebinding.activity.tranca.TrancaListagemActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.databinding.FormularioTrancaLayoutBinding
 import okhttp3.Call
 import okhttp3.Callback
@@ -34,16 +33,22 @@ class TrancaFormularioActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnSalvar.setOnClickListener {
-            val txtLocalidade = findViewById<EditText>(R.id.edtLocalidade)
-            val txtIdRegistro = findViewById<EditText>(R.id.edtIdRegistroFisico)
+        binding.btnGravar.setOnClickListener {
+            val txtLocalidade = findViewById<EditText>(R.id.txtTrancaLocalidade)
+            val txtIdRegistro = findViewById<EditText>(R.id.txtTrancaIdRegistro)
+            val txtFabricante = findViewById<EditText>(R.id.txtTrancaFabricante)
+            val txtModelo = findViewById<EditText>(R.id.txtTrancaModelo)
+            val txtTipoTranca = findViewById<EditText>(R.id.txtTrancaTipoTranca)
 
             val body = RequestBody.create(
                 MediaType.parse("application/json"),
                 """
                     {
                         "localidade": "${txtLocalidade.text}",
-                        "idRegistro": "${txtIdRegistro.text}"
+                        "idRegistro": "${txtIdRegistro.text}",
+                        "fabricante": "${txtFabricante.text}",
+                        "modelo": "${txtModelo.text}",
+                        "tipoTranca": "${txtTipoTranca.text}"
                     }
                 """.trimIndent()
             )
@@ -54,13 +59,13 @@ class TrancaFormularioActivity : AppCompatActivity() {
                 .build()
             val response = object : Callback {
                 override fun onFailure(call: Call?, e: IOException?) {
-                    Log.e("AGENDA-CONTATO", e?.message.toString())
+                    Log.e("AGENDA-TRANCA", e?.message.toString())
                 }
 
                 override fun onResponse(call: Call?, response: Response?) {
                     val localBody = response?.body()
                     localBody?.charStream()?.buffered()?.lines()?.forEach {
-                        Log.i("AGENDA-CONTATO", it.toString())
+                        Log.i("AGENDA-TRANCA", it.toString())
                     }
 
                 }

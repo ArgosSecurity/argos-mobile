@@ -13,19 +13,43 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/txtChamadoDependente"
+        android:id="@+id/txtChamadoTipoChamado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Nome dependente"
+        android:hint="Tipo do Chamado"
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/txtChamadoRgDependente"
+        android:id="@+id/txtChamadoNumeroRegistroTag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="RG do dependente"
+        android:hint="Número do registro da tag"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txtChamadoTipoTag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Tipo da tag"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txtChamadoHorarioEntrada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Horário de entrada"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txtChamadoHorarioSaida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Horário de saída"
         android:inputType="text" />
 
     <Button

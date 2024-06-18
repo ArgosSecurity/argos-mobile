@@ -21,7 +21,22 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:id="@+id/txtRowCnh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtRowCpf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/txtRowApto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtRowResponsavel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

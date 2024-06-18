@@ -11,12 +11,22 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtRowNome"
+            android:id="@+id/txtRowNumeroRegistroTag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/txtRowRg"
+            android:id="@+id/txtRowTipoTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtRowHorarioEntrada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtRowHorarioSaida"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

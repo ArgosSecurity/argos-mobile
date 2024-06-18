@@ -35,7 +35,7 @@ class ChamadoListagemActivity: AppCompatActivity() {
         binding.apply {
             rcvContatos.adapter = adapter
             rcvContatos.layoutManager = LinearLayoutManager(
-                    this@ChamadoListagemActivity)
+                this@ChamadoListagemActivity)
             // val btnFormulario = findViewById<Button>(R.id.btnFormulario)
             btnFormulario.setOnClickListener {
                 val intent = Intent(this@ChamadoListagemActivity,

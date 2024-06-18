@@ -2,43 +2,69 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastro de Responsavel"
+        android:text="Cadastro Responsavel"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edtNome"
+        android:id="@+id/txtResponsavelRg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/edtRg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:ems="10"
         android:hint="RG"
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/edtResponsavelApto"
+        android:id="@+id/txtResponsavelNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Apartamento"
+        android:ems="10"
+        android:hint="Nome"
         android:inputType="text" />
 
-    <Button
-        android:id="@+id/btnSalvar"
+    <EditText
+        android:id="@+id/txtResponsavelDataNascimento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Salvar" />
+        android:ems="10"
+        android:hint="Data de Nascimento"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txtResponsavelCpf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="CPF"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txtResponsavelApto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Apto"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txtResponsavelQuantidadeDependentes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Quantidade de Dependentes"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnGravar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gravar" />
 
     <TextView
         android:id="@+id/textView2"
@@ -51,5 +77,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ir para Listagem" />
-
 </LinearLayout>

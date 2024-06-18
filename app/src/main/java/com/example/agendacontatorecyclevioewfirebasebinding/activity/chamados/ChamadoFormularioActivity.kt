@@ -34,16 +34,21 @@ class ChamadoFormularioActivity : AppCompatActivity() {
         }
 
         binding.btnGravar.setOnClickListener {
-            val txtDependente = findViewById<EditText>(R.id.txtChamadoDependente)
-            val txtRgDependente = findViewById<EditText>(R.id.txtChamadoRgDependente)
+            val txtTipoChamado = findViewById<EditText>(R.id.txtChamadoTipoChamado)
+            val txtNumeroRegistroTag = findViewById<EditText>(R.id.txtChamadoNumeroRegistroTag)
+            val txtTipoTag = findViewById<EditText>(R.id.txtChamadoTipoTag)
+            val txtHorarioEntrada = findViewById<EditText>(R.id.txtChamadoHorarioEntrada)
+            val txtHorarioSaida = findViewById<EditText>(R.id.txtChamadoHorarioSaida)
 
             val body = RequestBody.create(
                 MediaType.parse("application/json"),
                 """
                     {
-                        "tipoChamado": "DEPENDENTE",
-                        "nome": "${txtDependente.text}",
-                        "rg": "${txtRgDependente.text}"
+                        "tipoChamado": "${txtTipoChamado.text}",
+                        "numeroRegistroTag": "${txtNumeroRegistroTag.text}",
+                        "tipoTag": "${txtTipoTag.text}",
+                        "horarioEntrada": "${txtHorarioEntrada.text}",
+                        "horarioSaida": "${txtHorarioSaida.text}"
                     }
                 """.trimIndent()
             )
