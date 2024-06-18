@@ -2,17 +2,21 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="ArgosMobile">
-        <State />
-      </entry>
       <entry key="MainActivity">
-        <State />
-      </entry>
-      <entry key="ResponsavelFormularioActivity">
-        <State />
-      </entry>
-      <entry key="TrancaFormularioActivity">
-        <State />
+        <State>
+          <runningDeviceTargetSelectedWithDropDown>
+            <Target>
+              <type value="RUNNING_DEVICE_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="SERIAL_NUMBER" />
+                  <value value="3987d44c0502" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </runningDeviceTargetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-06-18T00:35:13.240944900Z" />
+        </State>
       </entry>
     </value>
   </component>

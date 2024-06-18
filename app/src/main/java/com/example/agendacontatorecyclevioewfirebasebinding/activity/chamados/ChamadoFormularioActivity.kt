@@ -1,4 +1,4 @@
-package com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel
+package com.example.agendacontatorecyclevioewfirebasebinding.activity.chamados
 
 import android.content.Intent
 import android.os.Bundle
@@ -42,8 +42,8 @@ class ChamadoFormularioActivity : AppCompatActivity() {
                 """
                     {
                         "tipoChamado": "DEPENDENTE",
-                        "dependenteNome": "${txtDependente.text}",
-                        "dependenteRg: "${txtRgDependente.text}"
+                        "nome": "${txtDependente.text}",
+                        "rg": "${txtRgDependente.text}"
                     }
                 """.trimIndent()
             )
@@ -54,13 +54,13 @@ class ChamadoFormularioActivity : AppCompatActivity() {
                 .build()
             val response = object : Callback {
                 override fun onFailure(call: Call?, e: IOException?) {
-                    Log.e("AGENDA-CONTATO", e?.message.toString())
+                    Log.e("AGENDA-CHAMADO", e?.message.toString())
                 }
 
                 override fun onResponse(call: Call?, response: Response?) {
                     val localBody = response?.body()
                     localBody?.charStream()?.buffered()?.lines()?.forEach {
-                        Log.i("AGENDA-CONTATO", it.toString())
+                        Log.i("AGENDA-CHAMADO", it.toString())
                     }
 
                 }

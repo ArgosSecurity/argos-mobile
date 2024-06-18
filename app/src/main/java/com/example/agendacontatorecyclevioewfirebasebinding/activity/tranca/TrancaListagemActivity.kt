@@ -6,7 +6,6 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel.TrancaFormularioActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.databinding.ListagemTrancaLayoutBinding
 import com.example.agendacontatorecyclevioewfirebasebinding.model.Tranca
 import com.example.agendacontatorecyclevioewfirebasebinding.recycle.tranca.TrancaAdapter
@@ -55,7 +54,7 @@ class TrancaListagemActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call?, response: Response?) {
-                Log.i("AGENDA-TRANCA", "Dados recebidos convertendo")
+                Log.i("AGENDA-TRANCA", "Dados recebidos convertendo tranca")
                 val body = response?.body()
                 val type = object : TypeToken<HashMap<String?, Tranca?>?>() {}.type
                 val myMap: HashMap<String, Tranca> = gson.fromJson(body?.string(), type)

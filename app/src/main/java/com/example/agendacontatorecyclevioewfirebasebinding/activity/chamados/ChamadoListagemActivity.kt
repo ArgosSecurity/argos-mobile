@@ -1,4 +1,4 @@
-package com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel
+package com.example.agendacontatorecyclevioewfirebasebinding.activity.chamados
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.agendacontatorecyclevioewfirebasebinding.databinding.ListagemChamadoLayoutBinding
 import com.example.agendacontatorecyclevioewfirebasebinding.model.Chamado
 import com.example.agendacontatorecyclevioewfirebasebinding.recycle.chamado.ChamadoAdapter
-import com.example.agendacontatorecyclevioewfirebasebinding.recycle.chamado.DependenteAdapter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.Call
@@ -57,7 +56,7 @@ class ChamadoListagemActivity: AppCompatActivity() {
                 Log.e("AGENDA-CONTATO", e?.message.toString())
             }
             override fun onResponse(call: Call?, response: Response?) {
-                Log.i("AGENDA-CONTATO", "Dados recebidos convertendo")
+                Log.i("AGENDA-CONTATO", "Dados recebidos convertendo chamado")
                 val body = response?.body()
                 val type = object : TypeToken<HashMap<String?, Chamado?>?>() {}.type
                 val myMap: HashMap<String, Chamado> = gson.fromJson(body?.string(), type)

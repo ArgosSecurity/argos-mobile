@@ -43,8 +43,8 @@ class ResponsavelFormularioActivity : AppCompatActivity() {
                 """
                     {
                         "nome": "${txtNome.text}",
-                        "telefone": "${txtRg.text}",
-                        "email": "${txtApto.text}"
+                        "rg": "${txtRg.text}",
+                        "apto": "${txtApto.text}"
                     }
                 """.trimIndent()
             )

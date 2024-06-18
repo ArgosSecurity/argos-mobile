@@ -1,4 +1,4 @@
-package com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel
+package com.example.agendacontatorecyclevioewfirebasebinding.activity.dependente
 
 import android.content.Intent
 import android.os.Bundle
@@ -29,22 +29,22 @@ class DependenteFormularioActivity : AppCompatActivity() {
         // val btnGravar = findViewById<Button>(R.id.btnGravar)
         // val btnListagem = findViewById<Button>(R.id.btnListagem)
         binding.btnListagem.setOnClickListener {
-            val intent = Intent(this, ChamadoListagemActivity::class.java)
+            val intent = Intent(this, DependenteListagemActivity::class.java)
             startActivity(intent)
         }
 
         binding.btnGravar.setOnClickListener {
-//            val txtNome = findViewById<EditText>(R.id.txtNome)
-            val txtTelefone = findViewById<EditText>(R.id.txtChamadoDependente)
-            val txtEmail = findViewById<EditText>(R.id.txtChamadoRgDependente)
+            val txtRg = findViewById<EditText>(R.id.edtRg)
+            val txtNome = findViewById<EditText>(R.id.edtNome)
+            val txtDependenteApartamento = findViewById<EditText>(R.id.edtDependenteApto)
 
             val body = RequestBody.create(
                 MediaType.parse("application/json"),
                 """
                     {
-                        "nome": "",
-                        "telefone": "${txtTelefone.text}",
-                        "email": "${txtEmail.text}"
+                        "nome": "${txtNome.text}",
+                        "rg": "${txtRg.text}",
+                        "apto": "${txtDependenteApartamento.text}"
                     }
                 """.trimIndent()
             )

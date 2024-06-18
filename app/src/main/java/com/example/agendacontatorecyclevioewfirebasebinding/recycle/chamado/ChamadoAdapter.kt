@@ -28,6 +28,7 @@ class ChamadoAdapter(private val contexto: Context, private val lista: ArrayList
         val chamado = lista[position]
         holder.txtNome.text = "Nome do dependente: " + chamado.nome
         holder.txtRg.text = "RG do dependente: " + chamado.rg
+        holder.txtTipoChamado.text = "Tipo do Chamado: " + chamado.tipoChamado
 
         holder.btnRowApagar.setOnClickListener {
             Log.i("AGENDA-CONTATO",

@@ -1,5 +1,6 @@
-package com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel
+package com.example.agendacontatorecyclevioewfirebasebinding.activity.dependente
 
+import DependenteAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -7,9 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.agendacontatorecyclevioewfirebasebinding.databinding.ListagemDependenteLayoutBinding
-import com.example.agendacontatorecyclevioewfirebasebinding.model.Contato
 import com.example.agendacontatorecyclevioewfirebasebinding.model.Dependente
-import com.example.agendacontatorecyclevioewfirebasebinding.recycle.chamado.DependenteAdapter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.Call
@@ -40,7 +39,7 @@ class DependenteListagemActivity: AppCompatActivity() {
             // val btnFormulario = findViewById<Button>(R.id.btnFormulario)
             btnFormulario.setOnClickListener {
                 val intent = Intent(this@DependenteListagemActivity,
-                    ChamadoFormularioActivity::class.java)
+                    DependenteFormularioActivity::class.java)
                 startActivity(intent)
             }
         }
@@ -54,10 +53,10 @@ class DependenteListagemActivity: AppCompatActivity() {
             .build()
         val response = object : Callback {
             override fun onFailure(call: Call?, e: IOException?) {
-                Log.e("AGENDA-CONTATO", e?.message.toString())
+                Log.e("AGENDA-DEPENDENTE", e?.message.toString())
             }
             override fun onResponse(call: Call?, response: Response?) {
-                Log.i("AGENDA-CONTATO", "Dados recebidos convertendo")
+                Log.i("AGENDA-DEPENDENTE", "Dados recebidos convertendo dependente")
                 val body = response?.body()
                 val type = object : TypeToken<HashMap<String?, Dependente?>?>() {}.type
                 val myMap: HashMap<String, Dependente> = gson.fromJson(body?.string(), type)
@@ -66,7 +65,7 @@ class DependenteListagemActivity: AppCompatActivity() {
                     val contato = myMap[it]
                     if (contato != null) {
                         contato.id = it
-                        Log.i("AGENDA-CONTATO", "Contato: $contato")
+                        Log.i("AGENDA-DEPENDENTE", "DEPENDENTE: $contato")
                         listaTemp.add(contato)
                     }
                 }

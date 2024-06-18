@@ -10,10 +10,12 @@ import com.example.agendacontatorecyclevioewfirebasebinding.R
 class DependenteViewHolder(view : View) : RecyclerView.ViewHolder(view) {
     var txtNome : TextView
     var txtRg : TextView
+    var txtApto : TextView
     var btnRowApagar : Button
     init {
         txtNome = view.findViewById(R.id.txtRowNome)
         txtRg = view.findViewById(R.id.txtRowRg)
+        txtApto = view.findViewById(R.id.txtRowApto)
         btnRowApagar = view.findViewById(R.id.btnRowApagar)
     }
 }

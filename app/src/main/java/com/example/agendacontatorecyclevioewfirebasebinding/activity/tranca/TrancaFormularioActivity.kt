@@ -1,4 +1,4 @@
-package com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel
+package com.example.agendacontatorecyclevioewfirebasebinding.activity.tranca
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.R
+import com.example.agendacontatorecyclevioewfirebasebinding.activity.tranca.TrancaListagemActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.databinding.FormularioTrancaLayoutBinding
 import okhttp3.Call
 import okhttp3.Callback
@@ -29,7 +30,7 @@ class TrancaFormularioActivity : AppCompatActivity() {
         // val btnGravar = findViewById<Button>(R.id.btnGravar)
         // val btnListagem = findViewById<Button>(R.id.btnListagem)
         binding.btnListagem.setOnClickListener {
-            val intent = Intent(this, ChamadoListagemActivity::class.java)
+            val intent = Intent(this, TrancaListagemActivity::class.java)
             startActivity(intent)
         }
 
@@ -42,7 +43,7 @@ class TrancaFormularioActivity : AppCompatActivity() {
                 """
                     {
                         "localidade": "${txtLocalidade.text}",
-                        "idRegistroTranca": "${txtIdRegistro.text}"
+                        "idRegistro": "${txtIdRegistro.text}"
                     }
                 """.trimIndent()
             )

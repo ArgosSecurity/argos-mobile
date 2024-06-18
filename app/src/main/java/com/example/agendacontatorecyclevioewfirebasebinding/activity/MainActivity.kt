@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.R
-import com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel.ChamadoFormularioActivity
-import com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel.DependenteFormularioActivity
+import com.example.agendacontatorecyclevioewfirebasebinding.activity.chamados.ChamadoFormularioActivity
+import com.example.agendacontatorecyclevioewfirebasebinding.activity.dependente.DependenteFormularioActivity
 import com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel.ResponsavelFormularioActivity
-import com.example.agendacontatorecyclevioewfirebasebinding.activity.responsavel.TrancaFormularioActivity
+import com.example.agendacontatorecyclevioewfirebasebinding.activity.tranca.TrancaFormularioActivity
 
 class MainActivity : AppCompatActivity() {
 

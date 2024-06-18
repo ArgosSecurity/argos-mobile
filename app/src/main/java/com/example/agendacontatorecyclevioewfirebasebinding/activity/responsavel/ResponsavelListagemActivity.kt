@@ -54,7 +54,7 @@ class ResponsavelListagemActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call?, response: Response?) {
-                Log.i("AGENDA-RESPONSAVEL", "Dados recebidos convertendo")
+                Log.i("AGENDA-RESPONSAVEL", "Dados recebidos convertendo responsavel")
                 val body = response?.body()
                 val type = object : TypeToken<HashMap<String?, Responsavel?>?>() {}.type
                 val myMap: HashMap<String, Responsavel> = gson.fromJson(body?.string(), type)

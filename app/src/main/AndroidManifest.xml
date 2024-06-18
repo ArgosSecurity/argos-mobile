@@ -18,22 +18,22 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.responsavel.ChamadoFormularioActivity" android:exported="true">
+        <activity android:name=".activity.chamados.ChamadoFormularioActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.responsavel.ChamadoListagemActivity" android:exported="true">
+        <activity android:name=".activity.chamados.ChamadoListagemActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.responsavel.DependenteFormularioActivity" android:exported="true">
+        <activity android:name=".activity.dependente.DependenteFormularioActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.responsavel.DependenteListagemActivity" android:exported="true">
+        <activity android:name=".activity.dependente.DependenteListagemActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
@@ -48,12 +48,12 @@
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.responsavel.TrancaFormularioActivity" android:exported="true">
+        <activity android:name=".activity.tranca.TrancaFormularioActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.responsavel.TrancaListagemActivity" android:exported="true">
+        <activity android:name=".activity.tranca.TrancaListagemActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
